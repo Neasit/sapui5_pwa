@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+  <edmx:DataServices m:DataServiceVersion="2.0">
+    <Schema Namespace="ZEXPERIMENT" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityType Name="Equipment" sap:content-version="1">
+        <Key>
+          <PropertyRef Name="EquipmentNumber"/>
+        </Key>
+        <Property Name="EquipmentNumber" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Equipment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+        <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="80" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+        <Property Name="Category" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Category" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+        <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+        <Property Name="UII" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="UII" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+        <Property Name="MPN" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="MPN" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+        <Property Name="DisposalReason" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Reason" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+        <Property Name="isApproved" Type="Edm.Boolean" sap:label="Approved" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+        <Property Name="FLOC" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Floc" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+        <Property Name="SLOC" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Sloc" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+        <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+      </EntityType>
+      <EntityContainer Name="ZEXPERIMENT_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+        <EntitySet Name="EquipmentSet" EntityType="ZEXPERIMENT.Equipment" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+      </EntityContainer>
+      <atom:link rel="self" href="https://pslint-e.one-erp.telekom.de/sap/opu/odata/sap/ZEXPERIMENT/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+      <atom:link rel="latest-version" href="https://pslint-e.one-erp.telekom.de/sap/opu/odata/sap/ZEXPERIMENT/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,28 @@
+[
+  {
+    "EquipmentNumber": "2000413659",
+    "Description": "Test 1",
+    "Category": "K",
+    "Material": "45000778",
+    "UII": "UII123456789",
+    "MPN": "MPN123456789",
+    "DisposalReason": "D011",
+    "isApproved": false,
+    "FLOC": "TESTF",
+    "SLOC": "TESTS",
+    "Plant": "TESTP"
+  },
+  {
+    "EquipmentNumber": "2000413660",
+    "Description": "Test 2",
+    "Category": "K",
+    "Material": "45000777",
+    "UII": "UII123456789",
+    "MPN": "MPN123456789",
+    "DisposalReason": "D010",
+    "isApproved": true,
+    "FLOC": "TESTF",
+    "SLOC": "TESTS",
+    "Plant": "TESTP"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "_version": "1.2",
+  "ui5Path": "C:/SAPUI5/1.68.1/resources",
+  "BSPApp": "Z_IP_UI5_EXPERIMENT",
+  "BSPDesc": "Test experiments",
+  "abapPackage": "Z_IP_UI5_TEST",
+  "appIndex": "pslint/exp",
+  "servers": {
+  }
+}

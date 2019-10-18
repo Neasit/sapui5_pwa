@@ -1,0 +1,13 @@
+<mvc:View
+  controllerName="pslint.exp.controller.App"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true"
+  xmlns="sap.m"
+>
+  <App
+    id="app"
+    busy="{appModel>/busy}"
+    busyIndicatorDelay="{appModel>/delay}"
+  />
+</mvc:View>

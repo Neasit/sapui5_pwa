@@ -1,0 +1,60 @@
+<mvc:View
+  controllerName="pslint.exp.controller.StartPage"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
+  height="100%"
+>
+  <Page
+    showHeader="true"
+    title="{i18n>appTitle}"
+    showFooter="false"
+    showNavButton="false"
+    backgroundDesign="Solid"
+  >
+    <headerContent>
+      <Toolbar>
+        <ToolbarSpacer />
+        <Button icon="sap-icon://message-popup" tooltip="{i18n>messages}" press="onDetailMessages"/>
+        <ToolbarSeparator />
+        <Button icon="sap-icon://bar-code" tooltip="{i18n>scan}" press="onScan" />
+      </Toolbar>
+    </headerContent>
+    <content>
+      <VBox>
+          <Panel
+              expandable="true"
+              expanded="true"
+              headerText="{i18n>panelText}"
+              width="auto"
+          >
+            <Toolbar>
+              <SearchField placeholder="{i18n>search}" value="{local>/search}" search="onSearch" />
+            </Toolbar>
+          </Panel>
+          <ScrollContainer
+              horizontal="false"
+              vertical="true"
+              height="100%"
+          >
+            <List
+                id="idMainData"
+                mode="Delete"
+                items="{ path: 'local>/data'}"
+                delete="onDelete"
+                growing="false"
+            >
+              <!--
+              <infoToolbar>
+                <Toolbar id="idMainFilteredToolbar" visible="false" active="false" design="Info">
+                  <Text text="{i18n>InfoToolbarTableIsFiltered}"/>
+                </Toolbar>
+              </infoToolbar>
+              -->
+              <ObjectListItem title="{local>MaterialNumber}" intro="{local>UII}" number="{local>Quntity}" numberUnit="ST" />
+            </List>
+          </ScrollContainer>
+        </VBox>
+    </content>
+  </Page>
+</mvc:View>

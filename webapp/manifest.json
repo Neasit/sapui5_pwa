@@ -1,0 +1,119 @@
+{
+	"_version": "1.9.0",
+	"short_name": "Experiment",
+	"name": "Experimental app",
+	"icons": [
+		{
+			"src": "img/ic.jpg",
+			"type": "image/jpg",
+			"sizes": "161x157"
+		}
+	],
+	"start_url": "/index.html",
+	"background_color": "#3367D6",
+	"display": "standalone",
+	"scope": "/",
+	"theme_color": "#3367D6",
+	"sap.app": {
+		"id": "pslint.exp",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "0.0.1"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"dataSources": {
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_hcb", "sap_belize"]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "pslint.exp.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.68.0",
+			"libs": {
+				"sap.ui.core": {
+					"lazy": true
+				},
+				"sap.ui.commons": {
+					"lazy": true
+				},
+				"sap.m": {
+					"lazy": true
+				},
+				"tsystems.rus.custom": {
+					"lazy": true
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pslint.exp.i18n.i18n"
+				},
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "pslint.exp.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": "notFound"
+				},
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "StartPage",
+					"target": "StartPage"
+				}
+			],
+			"targets": {
+				"StartPage": {
+					"viewName": "StartPage",
+					"viewId": "StartPage"
+				},
+				"notFound": {
+					"viewName": "NotFound",
+					"viewId": "notFound"
+				}
+			}
+		}
+	}
+}
