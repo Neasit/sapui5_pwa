@@ -11,6 +11,8 @@ This is example project: how to create offline application based on SAP UI5 with
 -   clone project
     
 -   SAP UI5 core is needed (can be downloaded from [link](https://tools.hana.ondemand.com/#sapui5))
+
+-   change path to UI5 core in "gruntConfig.json" -> setting "ui5Path"
     
 -   build project using predefined grunt tasks and run test server
     
