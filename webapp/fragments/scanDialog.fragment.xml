@@ -1,0 +1,40 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+>
+
+  <Dialog
+    title="{i18n>titleScanDialog}"
+    showHeader="true"
+    contentWidth="auto"
+    contentHeight="auto"
+  >
+    <content>
+      <html:video
+        id="scanVideo"
+        width="max-content"
+        height="max-content"
+      />
+    </content>
+    <buttons>
+      <Button
+        tooltip="{i18n>textChangeButton}"
+        icon="sap-icon://synchronize"
+        visible="{scanModel>/changeButton}"
+        press="onChangePress"
+      />
+      <Button
+        text="{i18n>textOkButton}"
+        icon="sap-icon://accept"
+        visible="{scanModel>/editButton}"
+        press="onOkPress"
+      />
+      <Button
+        text="{i18n>textCancelButton}"
+        icon="sap-icon://decline"
+        press="onCancelPress"
+      />
+    </buttons>
+  </Dialog>
+</core:FragmentDefinition>

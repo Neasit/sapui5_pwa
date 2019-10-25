@@ -23,18 +23,16 @@ sap.ui.define(
       init: function() {
         // call the base component's init function
         UIComponent.prototype.init.apply(this, arguments);
-        // load additionaly libs
-        // sap.ui.getCore().loadLibrary('sap.ui.layout', { async: true });
+        // load additionaly libs (is needed for version < 1.56)
         sap.ui.getCore().loadLibrary('sap.ui.commons', { async: true });
         sap.ui.getCore().loadLibrary('sap.ui.core', { async: true });
         sap.ui.getCore().loadLibrary('sap.m', { async: true });
-        sap.ui.getCore().loadLibrary('tsystems.rus.custom', { async: true });
+
         sap.ui.require(
-          ['sap/ui/thirdparty/datajs', 'sap/ui/model/odata/v2/ODataModel'],
-          function(datajs, oDataModel) {
-            this.oMainModel = new oDataModel('/sap/opu/odata/sap/ZPM_COMMON_SRV/');
-            this.setModel(this.oMainModel, undefined);
-          }.bind(this)
+          ['pslint/exp/libs/zxingjs0151.min', 'jquery.sap.global', 'jquery.sap.storage'],
+          function(ZXing) {
+            return ZXing;
+          }
         );
         // Create connection to addition oData service or do request
         // set the device model

@@ -8,13 +8,13 @@ sap.ui.define(['sap/ui/model/json/JSONModel', 'sap/ui/Device'], function(JSONMod
       return oModel;
     },
 
-    createLocalModel: function(oStore) {
+    createLocalModel: function(oStore, sKey) {
       var oData = {
         data: [],
-        search: '',
+        syncActive: false,
       };
       if (oStore) {
-        var sList = oStore.get('data');
+        var sList = oStore.get(sKey);
         if (sList) {
           oData.data = JSON.parse(sList);
         }

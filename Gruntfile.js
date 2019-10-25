@@ -11,7 +11,10 @@ module.exports = function(grunt) {
 
   var oExtFunctions = require('./extFn');
   var oConfig = grunt.file.readJSON('gruntConfig.json');
-  var oDeployConfig = grunt.file.readJSON('deployConfig.json');
+  var oDeployConfig;
+  if (grunt.file.exists('deployConfig.json')) {
+    oDeployConfig = grunt.file.readJSON('deployConfig.json');
+  }
   var oPkg = grunt.file.readJSON('package.json');
   var oServerInfo = {
     URL: '',
@@ -69,7 +72,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: '<%= dir.temp %>',
-            src: ['**/*.*', '!libs/*.*'],
+            src: ['**/*.*', '!libs/*.*', '!**/*-preload.js'],
             dest: '<%= dir.temp %>/',
             rename: '<%= fnRename %>',
           },
@@ -189,7 +192,7 @@ module.exports = function(grunt) {
           {
             expand: true, // Enable dynamic expansion.
             cwd: '<%= dir.temp %>/', // Src matches are relative to this path.
-            src: ['**/*.js', '!**/*-dbg*', '!**/libs/*.*'],
+            src: ['**/*.js', '!**/*-dbg*', '!**/libs/*.*', '!**/*-preload.js'],
             dest: '<%= dir.temp %>/', // Destination path prefix.
           },
         ],
@@ -327,12 +330,12 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean',
     'copy:temp',
-    'copy:dbg',
     'openui5_preload:application', // for apps
     /* for libs
     'openui5_preload:components',
     'openui5_preload:library',
     */
+    'copy:dbg',
     'uglify:temp',
     'cssmin:temp',
     'copy:dist',
@@ -344,13 +347,13 @@ module.exports = function(grunt) {
   grunt.registerTask('buildb', [
     'clean',
     'copy:temp',
-    'copy:dbg',
-    'babel:temp',
     'openui5_preload:application', // for apps
     /* for libs
     'openui5_preload:components',
     'openui5_preload:library',
     */
+    'copy:dbg',
+    'babel:temp',
     'uglify:temp',
     'cssmin:temp',
     'copy:dist',

@@ -23,8 +23,7 @@
 		},
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
-		"dataSources": {
-		}
+		"dataSources": {}
 	},
 	"sap.ui": {
 		"technology": "UI5",
@@ -59,9 +58,6 @@
 				},
 				"sap.m": {
 					"lazy": true
-				},
-				"tsystems.rus.custom": {
-					"lazy": true
 				}
 			}
 		},
@@ -82,6 +78,11 @@
 			"css": [
 				{
 					"uri": "css/style.css"
+				}
+			],
+			"js": [
+				{
+					"uri": "libs/zxingjs0151.min.js"
 				}
 			]
 		},

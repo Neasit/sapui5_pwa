@@ -6,5 +6,20 @@
   "abapPackage": "Z_IP_UI5_TEST",
   "appIndex": "pslint/exp",
   "servers": {
+    "DPF": {
+      "serverURL": "https://pslint-dev.one-erp.telekom.de",
+      "serverPort": "443",
+      "serverClient": "200"
+    },
+    "XPF": {
+      "serverURL": "https://pslint-e.one-erp.telekom.de",
+      "serverPort": "443",
+      "serverClient": "200"
+    },
+    "GUS": {
+      "serverURL": "https://sapgwpsl.t-systems.ru",
+      "serverPort": "4443",
+      "serverClient": "200"
+    }
   }
 }

@@ -16,21 +16,23 @@
       <Toolbar>
         <ToolbarSpacer />
         <Button icon="sap-icon://message-popup" tooltip="{i18n>messages}" press="onDetailMessages"/>
-        <ToolbarSeparator />
-        <Button icon="sap-icon://bar-code" tooltip="{i18n>scan}" press="onScan" />
       </Toolbar>
     </headerContent>
     <content>
       <VBox>
           <Panel
               expandable="true"
-              expanded="true"
-              headerText="{i18n>panelText}"
+              expanded="false"
               width="auto"
           >
-            <Toolbar>
-              <SearchField placeholder="{i18n>search}" value="{local>/search}" search="onSearch" />
-            </Toolbar>
+            <headerToolbar>
+              <Toolbar>
+                <Title text="{i18n>panelText}" />
+                <ToolbarSpacer />
+                <Button tooltip="{i18n>TooltipSync}" icon="sap-icon://synchronize" press="onSync" enabled="{local>/syncActive}" />
+              </Toolbar>
+            </headerToolbar>
+            <Text text="{i18n>infoText}" />
           </Panel>
           <ScrollContainer
               horizontal="false"
@@ -44,6 +46,14 @@
                 delete="onDelete"
                 growing="false"
             >
+            <headerToolbar>
+              <Toolbar>
+                <ToolbarSpacer />
+                <Button icon="sap-icon://save" tooltip="{i18n>save}" press="onSave" />
+                <ToolbarSeparator />
+                <Button icon="sap-icon://bar-code" tooltip="{i18n>scan}" press="onScan" />
+              </Toolbar>
+            </headerToolbar>
               <!--
               <infoToolbar>
                 <Toolbar id="idMainFilteredToolbar" visible="false" active="false" design="Info">

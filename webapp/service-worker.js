@@ -21,6 +21,7 @@ if (workbox) {
   workbox.precaching.precacheAndRoute([
       '/manifest.json',
       '/Component-preload.js',
+      '/libs/zxingjs0151.min.js',
       { url: '/index.html', revision: '112334' },
   ]);
 } else {
